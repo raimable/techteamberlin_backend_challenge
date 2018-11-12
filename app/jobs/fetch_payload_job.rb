@@ -4,7 +4,8 @@ class FetchPayloadJob < ApplicationJob
   queue_as :default
 
   retry_on Net::HTTPExceptions
-  discard_on JSON::JSONError, ActiveRecord::ActiveRecordError
+  discard_on JSON::JSONError
+  discard_on ActiveRecord::ActiveRecordError
 
 
   def perform(*args)
