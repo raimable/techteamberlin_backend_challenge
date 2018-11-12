@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mission: one
+  payload_identifier: MyString
+  reused: false
+  manifacturer: MyString
+  payload_type: MyString
+  mass_kg: 1.5
+  mass_lbs: 1.5
+  orbit: MyString
+
+two:
+  mission: two
+  payload_identifier: MyString
+  reused: false
+  manifacturer: MyString
+  payload_type: MyString
+  mass_kg: 1.5
+  mass_lbs: 1.5
+  orbit: MyString

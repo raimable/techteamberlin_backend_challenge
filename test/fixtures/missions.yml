@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mission_identifier: MyString
+  wikipedia: MyString
+  website: MyString
+  twitter: MyString
+  description: MyText
+
+two:
+  name: MyString
+  mission_identifier: MyString
+  wikipedia: MyString
+  website: MyString
+  twitter: MyString
+  description: MyText
