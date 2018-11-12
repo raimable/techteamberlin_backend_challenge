@@ -1,0 +1,2 @@
+class PayloadsController < ApplicationController
+end
