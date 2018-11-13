@@ -53,19 +53,29 @@ Open your favorit API test (I used Postman) and run the following command:
 
 ### Syncronious Load Data  
 
-when this endpoint is called the app should fetch data from the SpaceX API. That means all missions, all payloads and all nationalities (from within the payloads).
 
 ```
-localhost:3000/fetch_data​​ 
+localhost:3000/fetch_data​​sync=true
 ```
+
+When this endpoint is called the app should fetch data from the SpaceX API Live in the browser (May hung the browser). That means all missions, all payloads and all nationalities (from within the payloads) will be loaded with this API end point.
 
 ### Asyncronious Load Data  
-
-When this endpoint is called the app should fetch data from the SpaceX API. That means all missions, all payloads and all nationalities (from within the payloads).
 
 ```
 localhost:3000/fetch_data​​?sync=false
 ```
+When this endpoint is called the app should fetch data from the SpaceX API in the background only show 
+
+```
+{
+    "success": true,
+    "sync": false,
+    "message": "A data fetch is scheduled"
+}
+
+```
+That means all missions, all payloads and all nationalities (from within the payloads) will be loaded with this API end point.
 
 ### Load All Missions OR Single Mission
 
