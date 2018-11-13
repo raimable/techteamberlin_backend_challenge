@@ -98,6 +98,8 @@ localhost:3000/missions/:id​​ ​​
 
 ```
 localhost:3000/missions/search​​?query=some-text
+
+Eg: localhost:3000/missions/search?query=Europe
 ```
 Return all missions where a search term that the user submits is found in the missions description.
 
