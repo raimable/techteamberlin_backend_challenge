@@ -29,7 +29,7 @@ In case you are using mac:
 * [Git](https://guides.rubyonrails.org/getting_started.html)
 
 
-### Installing
+### Setup Process
 
 To install the app follow the following steps go to command line, and change directory to where you want to store the project and run the following commands: 
 
@@ -51,17 +51,55 @@ rails server #To start the server
 
 Open your favorit API test (I used Postman) and run the following command:
 
+### Syncronious Load Data  
+
+when this endpoint is called the app should fetch data from the SpaceX API. That means all missions, all payloads and all nationalities (from within the payloads).
 
 ```
-localhost:3000/fetch_data​​ - when this endpoint is called the app should fetch data from the SpaceX API. That means all missions, all payloads and all nationalities (from within the payloads).
+localhost:3000/fetch_data​​ 
+```
+
+### Asyncronious Load Data  
+
+When this endpoint is called the app should fetch data from the SpaceX API. That means all missions, all payloads and all nationalities (from within the payloads).
+
+```
+localhost:3000/fetch_data​​?sync=false
+```
+
+### Load All Missions OR Single Mission
+
+```
 localhost:3000/missions/​​ ​​- return all missions
-localhost:3000/missions/:id​​ ​​- return the mission with this id.
-localhost:3000/missions/search​​ ​​- return all missions where a search term that the user submits is
+localhost:3000/missions/:id​​ ​​
+```
+
+
+### Mission Search
+
+```
+localhost:3000/missions/search​​?query=some-text
+```
+Return all missions where a search term that the user submits is
 found in the missions description.
+
+### Load All Payload || Single Payload 
+
+```
 localhost:3000/payloads​​ - return all payloads
 localhost:3000/payloads/:id​​ - return the payload with this id
+```
+
+### Load All Nationalities || Single Nationality 
+
+```
 localhost:3000/nationalities​​ - return all nationalities
 localhost:3000/nationalities/:id​​ - return the nationality with this id
+```
+
+### Payloads for Specific Nationality || Missions for Specific Nationility 
+
+```
 localhost:3000/nationalities/:id/payloads​​ - return all payloads for this nationality
 localhost:3000/nationalities/:id/missions​​ - return all missions for this nationality
 
