@@ -33,14 +33,18 @@ class FetchPayloadJob < ApplicationJob
       # Especially for SpaceX playloads
 
       nationality_name = payload_json['nationality']
-      nationality = Nationality.find_or_create_by name: payload_json['nationality'] if nationality_name
+      if nationality_name
+        nationality = Nationality.find_or_create_by name:
+          payload_json['nationality']
+      end
 
       payload.nationality = nationality
 
       if payload.save
         Rails.logger.info "Payload #{payload_id} saved"
       else
-        Rails.logger.info "Failed to save payload #{payload_id} due to #{payload.errors.full_messages}"
+        Rails.logger.info "Failed to save payload #{payload_id} due to
+        #{payload.errors.full_messages}"
       end
     end
   end

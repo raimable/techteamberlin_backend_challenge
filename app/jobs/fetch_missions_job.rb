@@ -27,7 +27,8 @@ class FetchMissionsJob < ApplicationJob
     json_data.each do |mission_data|
       # Check if the mission is already there by mission_id to avoid deplicate
       mission_identifier = mission_data['mission_id']
-      Mission.find_or_create_by mission_identifier: mission_identifier do |mission|
+      Mission.find_or_create_by mission_identifier:
+      mission_identifier do |mission|
         mission.name = mission_data['mission_name']
         mission.mission_identifier = mission_data['mission_id']
         mission.wikipedia = mission_data['wikipedia']
@@ -47,6 +48,7 @@ class FetchMissionsJob < ApplicationJob
         end
       end
     end
-    Rails.logger.info "Mission Fetch Job Completed. #{error_count} errors out of #{json_data.count}"
+    Rails.logger.info "Mission Fetch Job Completed. #{error_count}
+    errors out of #{json_data.count}"
   end
 end

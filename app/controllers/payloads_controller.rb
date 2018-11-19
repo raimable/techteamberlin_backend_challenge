@@ -2,7 +2,9 @@
 class PayloadsController < ApplicationController
   def index
     @payloads = Payload.all
-    @payloads = @payloads.where(nationality_id: params[:nationality_id]) if params[:nationality_id]
+    if params[:nationality_id]
+      @payloads = @payloads.where(nationality_id: params[:nationality_id])
+    end
   end
 
   def show
