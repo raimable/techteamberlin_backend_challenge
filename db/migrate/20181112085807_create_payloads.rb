@@ -1,9 +1,10 @@
+# Create payload table migration
 class CreatePayloads < ActiveRecord::Migration[5.1]
   def change
     create_table :payloads do |t|
       t.references :mission, foreign_key: true
-      #t.references :nationality, foreign_key: true, null:true
-      t.string :payload_identifier, unique:true,null:false
+      # t.references :nationality, foreign_key: true, null:true
+      t.string :payload_identifier, unique: true, null: false
       t.boolean :reused
       t.string :manufacturer
       t.string :payload_type
