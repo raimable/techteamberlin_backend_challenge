@@ -1,3 +1,4 @@
+# Application Controller
 class ApplicationController < ActionController::API
-	include ActionView::Rendering
+  include ActionView::Rendering
 end
