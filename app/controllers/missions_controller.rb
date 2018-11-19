@@ -1,8 +1,13 @@
+# Mission Controller.
 class MissionsController < ApplicationController
-
   def index
     if params[:nationality_id]
-      @missions = Nationality.find(params[:nationality_id]).missions.uniq
+      nationality = Nationality.find_by_id(params[:nationality_id])
+      if nationality
+        @missions = nationality.missions.uniq
+      else
+        render json: { success: false, message: 'Nationality not found' }, status: 404
+      end
     else
       @missions = Mission.all
     end
@@ -13,7 +18,6 @@ class MissionsController < ApplicationController
   end
 
   def search
-
     params.require(:query)
 
     query = params[:query]
