@@ -4,7 +4,7 @@ class PayloadsController < ApplicationController
     if params[:nationality_id]
       nationality = Nationality.find_by_id(params[:nationality_id])
       if nationality
-        @payloads = @payloads.where(nationality_id: params[:nationality_id])
+        @payloads = Payload.where(nationality_id: params[:nationality_id])
       else
         render json: { success: false, message:
         'Nationality not found' },
