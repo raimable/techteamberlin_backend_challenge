@@ -86,6 +86,25 @@ When this endpoint is called without 'sync' parameter, we will schedule a backgr
 ```
 That means all missions, all payloads and all nationalities (from within the payloads) will be loaded with this API end point.
 
+
+### Get Info about loaded data
+
+```
+localhost:3000/info
+```
+This API endpoint will give info about loaded data
+
+```
+{
+    "total_payloads_in_db": 117,
+    "unique_payload_identifiers": 117,
+    "payloads_without_a_mission": 71,
+    "total_missions": 11,
+    "total_nationalities": 31
+}
+
+```
+
 ### Retrieve All Missions OR Single Mission
 
 ```
