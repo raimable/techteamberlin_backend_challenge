@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 # Fetch Payloads ActiveJob
 class FetchAllPayloadsJob < ApplicationJob
-  #queue_as :default
+  # queue_as :default
 
   retry_on Net::HTTPExceptions # 5 times, 3 seconds apart
   discard_on JSON::JSONError
@@ -16,8 +16,6 @@ class FetchAllPayloadsJob < ApplicationJob
     uri = URI(Rails.application.config.x.space_x_api_payloads_url.to_s)
     missions = Net::HTTP.get(uri)
     json_data = JSON.parse(missions)
-
-    error_count = 0
 
     json_data.each do |payload_data|
       # Check if the payload is already there by payload_id to avoid deplicate
