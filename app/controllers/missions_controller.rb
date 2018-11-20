@@ -6,7 +6,9 @@ class MissionsController < ApplicationController
       if nationality
         @missions = nationality.missions.uniq
       else
-        render json: { success: false, message: 'Nationality not found' }, status: 404
+        render json: { success: false, message:
+          'Nationality not found' },
+               status: 404
       end
     else
       @missions = Mission.all
