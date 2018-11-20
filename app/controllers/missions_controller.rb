@@ -16,7 +16,14 @@ class MissionsController < ApplicationController
   end
 
   def show
-    @mission = Mission.find(params[:id])
+    mission = Mission.find_by_id(params[:id])
+    if mission
+      @mission = mission
+    else
+      render json: { success: false, message:
+          'Mission not found' },
+             status: 404
+    end
   end
 
   def search
