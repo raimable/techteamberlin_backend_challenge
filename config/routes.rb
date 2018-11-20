@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   get 'fetch_data', to: 'home#fetch_all'
+  get 'info', to: 'home#info'
 end
