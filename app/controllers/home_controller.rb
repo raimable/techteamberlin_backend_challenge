@@ -12,4 +12,14 @@ class HomeController < ApplicationController
       }
     end
   end
+
+  def info
+    render json: {
+      total_payloads_in_db: Payload.count,
+      unique_payload_identifiers: Payload.all.select('payload_identifier').collect(&:payload_identifier).uniq.count,
+      payloads_without_a_mission: Payload.where(mission: nil).count,
+      total_missions: Mission.count,
+      total_nationalities: Nationality.count
+    }
+  end
 end
