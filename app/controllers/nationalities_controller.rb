@@ -9,7 +9,6 @@ class NationalitiesController < ApplicationController
     if nationality
       @nationality = nationality
     else
-      
       render json: { success: false, message:
           'Nationality not found' },
              status: 404
