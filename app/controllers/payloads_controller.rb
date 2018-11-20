@@ -7,7 +7,7 @@ class PayloadsController < ApplicationController
         @payloads = @payloads.where(nationality_id: params[:nationality_id])
       else
         render json: { success: false, message:
-          'Nationality not found' },
+        'Nationality not found' },
                status: 404
       end
     else
@@ -16,6 +16,13 @@ class PayloadsController < ApplicationController
   end
 
   def show
-    @payload = Payload.find(params[:id])
+    payload = Payload.find_by_id(params[:id])
+    if payload
+      @payload = payload
+    else
+      render json: { success: false, message:
+      'Payload not found' },
+             status: 404
+    end
   end
 end
