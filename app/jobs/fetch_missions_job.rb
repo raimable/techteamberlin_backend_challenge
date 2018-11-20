@@ -40,8 +40,11 @@ class FetchMissionsJob < ApplicationJob
 
         mission_data['payload_ids'].each do |payload_id|
           if sync == true
+            # Fetch Payload that have missions syncroniously
             FetchPayloadJob.perform_now(payload_id, mission.id)
+
           else
+            # Fetch Payload that have missions asyncroniously
             FetchPayloadJob.perform_later(payload_id, mission.id)
 
           end
@@ -50,5 +53,14 @@ class FetchMissionsJob < ApplicationJob
     end
     Rails.logger.info "Mission Fetch Job Completed. #{error_count}
     errors out of #{json_data.count}"
+
+    # Fetch payloads that were not fetched from missions
+    if sync == true
+      # Fetch remaining Payloads that have no missions syncroniously
+      FetchAllPayloadsJob.perform_now
+    else
+      # Fetch remaining Payloads that have no missions asyncroniously
+      FetchAllPayloadsJob.perform_later
+    end
   end
 end
