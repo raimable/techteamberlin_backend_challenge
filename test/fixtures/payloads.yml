@@ -4,7 +4,7 @@ one:
   mission: one
   payload_identifier: MyString
   reused: false
-  manifacturer: MyString
+  manufacturer: MyString
   payload_type: MyString
   mass_kg: 1.5
   mass_lbs: 1.5
@@ -14,7 +14,7 @@ two:
   mission: two
   payload_identifier: MyString
   reused: false
-  manifacturer: MyString
+  manufacturer: MyString
   payload_type: MyString
   mass_kg: 1.5
   mass_lbs: 1.5

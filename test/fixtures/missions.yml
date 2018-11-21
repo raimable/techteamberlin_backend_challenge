@@ -1,17 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  mission_identifier: MyString
-  wikipedia: MyString
-  website: MyString
-  twitter: MyString
-  description: MyText
+  name: 'test data1'
+  mission_identifier: 'TEST-ID-1'
+  wikipedia: 'wikipedia-link1'
+  website: 'my-websiste-link1'
+  twitter: 'twitter1'
+  description: 'description1'
 
 two:
-  name: MyString
-  mission_identifier: MyString
-  wikipedia: MyString
-  website: MyString
-  twitter: MyString
-  description: MyText
+  name: 'test data2'
+  mission_identifier: 'TEST-ID-2'
+  wikipedia: 'wikipedia-link2'
+  website: 'my-websiste-link2'
+  twitter: 'twitter2'
+  description: 'description2'
+
