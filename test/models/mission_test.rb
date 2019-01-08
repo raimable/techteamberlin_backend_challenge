@@ -1,10 +1,9 @@
 require 'test_helper'
 
 class MissionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  def test_the_truth
+  # test " Create, Read, Update delete Mission"true
+
+  def test_crud_mission
     mission = Mission.new name: 'some name',
                           mission_identifier: 'TEST-1-001',
                           wikipedia: 'missions(:one).wikipedia',

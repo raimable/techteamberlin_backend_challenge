@@ -1,10 +1,9 @@
 require 'test_helper'
 
 class PayloadTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  def test_the_truth
+  # Test Create, Read/Load, Update, Delete/Destroy Payload
+  
+  def test_crud_payload
     # Create Mission
     mission = Mission.new name: 'some name',
                           mission_identifier: 'TEST-1-001',
